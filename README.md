@@ -1,2 +1,3 @@
 # Exercicio-Programa-2
-testando
+Enzo Quental
+João Pedro Natal
