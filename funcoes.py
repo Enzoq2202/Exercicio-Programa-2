@@ -7,3 +7,6 @@ def cria_baralho():
         for naipe in naipes:
             baralho.append(carta+naipe)
     return baralho 
+# Extrai Naipe de Carta
+def extrai_naipe(carta):
+    return carta[-1]
