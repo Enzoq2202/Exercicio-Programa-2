@@ -10,3 +10,6 @@ def cria_baralho():
 # Extrai Naipe de Carta
 def extrai_naipe(carta):
     return carta[-1]
+# Extrai valor da carta
+def extrai_valor(carta):  
+    return carta[:-1]
