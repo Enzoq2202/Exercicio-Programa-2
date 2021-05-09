@@ -13,3 +13,8 @@ def extrai_naipe(carta):
 # Extrai valor da carta
 def extrai_valor(carta):  
     return carta[:-1]
+# Empilha carta no Paciência Acordeão
+def empilha(baralho,origem,destino):
+    baralho[destino] = baralho[origem]
+    del(baralho[origem])
+    return baralho
