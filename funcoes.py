@@ -18,3 +18,24 @@ def empilha(baralho,origem,destino):
     baralho[destino] = baralho[origem]
     del(baralho[origem])
     return baralho
+#Lista Movimentos possíveis no paciência acordeão
+def lista_movimentos_possiveis(baralho,i):
+    if i==0:
+        return []
+    if i<=2:   
+        if baralho[i][-1]==baralho[i-1][-1]:
+            return [1]
+        if baralho[i][:-1]==baralho[i-1][:-1]:
+            return [1]
+    else:
+        if (baralho[i][-1]==baralho[i-1][-1] or baralho[i][:-1]==baralho[i-1][:-1]) and (baralho[i][-1]==baralho[i-3][-1] or baralho[i][:-1]==baralho[i-3][:-1]):
+            return [1,3]
+        if baralho[i][-1]==baralho[i-1][-1]:
+            return [1]
+        if baralho[i][:-1]==baralho[i-1][:-1]:
+            return [1]
+        if baralho[i][-1]==baralho[i-3][-1]:
+            return [3]
+        if baralho[i][:-1]==baralho[i-3][:-1]:
+            return [3]
+    return[]
