@@ -48,6 +48,7 @@ def possui_movimentos_possiveis(baralho):
             possui = True
         i += 1
     return possui
+#novas funções
 def imprime_baralho(baralho):
     for carta in baralho:
         print(carta)
