@@ -26,4 +26,4 @@ baralho=list(set(baralho))
 while possui_movimentos_possiveis(baralho):
     imprime_baralho(baralho)
     a=int(input('digite a posição da carta que deseja mover:{1} a {len(baralho)}'.format(baralho)))
-
+    break
