@@ -39,6 +39,7 @@ def lista_movimentos_possiveis(baralho,i):
         if baralho[i][:-1]==baralho[i-3][:-1]:
             return [3]
     return[]
+# Possui movimentos
 def possui_movimentos_possiveis(baralho):
     possui = False
     i = 0
