@@ -48,7 +48,41 @@ def possui_movimentos_possiveis(baralho):
             possui = True
         i += 1
     return possui
+
+# Importando cores
+
+import colorama
+colorama.init(autoreset=True)
+
+
 #novas funções
+
 def imprime_baralho(baralho):
+    i = 1
     for carta in baralho:
-        print(carta)
+        if extrai_naipe(carta) == '♥':
+            print(f'{i}. '+ colorama.Fore.RED + carta)
+        if extrai_naipe(carta) == '♠':
+            print(f'{i}. '+ colorama.Fore.BLUE + carta)
+        if extrai_naipe(carta) == '♣':
+            print(f'{i}. '+ colorama.Fore.GREEN + carta)
+        if extrai_naipe(carta) == '♦':
+            print(f'{i}. '+ colorama.Fore.MAGENTA + carta)
+        i += 1
+def extrai_cor(carta):
+    if extrai_naipe(carta) == '♥':
+        cor = colorama.Fore.RED
+            
+    if extrai_naipe(carta) == '♠':
+        cor = colorama.Fore.BLUE
+            
+    if extrai_naipe(carta) == '♣':
+        cor = colorama.Fore.GREEN
+            
+    if extrai_naipe(carta) == '♦':
+        cor = colorama.Fore.MAGENTA
+    return cor+carta
+        
+        
+    
+

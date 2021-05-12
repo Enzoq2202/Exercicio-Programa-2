@@ -1,6 +1,6 @@
 #Jogo Paciência Acordeão
 from funcoes import*
-
+import colorama
 
 print('Paciência Acordeão ')
 print('================== ')
@@ -21,9 +21,33 @@ print('Desde que alguma das condições acima seja satisfeita, qualquer carta po
 print('')
 input('Aperte [Enter] para iniciar o jogo...')
 
-baralho=cria_baralho()
+baralho = cria_baralho()
 baralho=list(set(baralho))
 while possui_movimentos_possiveis(baralho):
     imprime_baralho(baralho)
-    a=int(input('digite a posição da carta que deseja mover:{1} a {len(baralho)}'.format(baralho)))
-    break
+    origem=int(input('Escolha uma carta (digite um número entre 1 e {}): '.format(len(baralho))))
+    movim = lista_movimentos_possiveis(baralho, origem-1)
+    if movim == []:
+        print(f'A carta {baralho[origem-1]} não pode ser movida. Por favor, digite um número entre 1 e {len(baralho)}:')
+    elif movim == [1]:
+        baralho = empilha(baralho,origem-1,origem-2 )
+    elif movim == [3]:
+        baralho = empilha(baralho,origem-1,origem -4)
+    else:
+        print(f'Sobre qual carta você quer empilhar o {baralho[origem-1]}?')
+        print(f'1. {extrai_cor(baralho[origem-2])}')
+        print(f'2. {extrai_cor(baralho[origem-4])}')
+        c = int(input('Digite o número de sua escolha (1-2):'))
+        if c == 1:
+            baralho = empilha(baralho,origem-1,origem -2)
+        if c == 2:
+            baralho = empilha(baralho,origem-1,origem -4)
+if len(baralho) == 1:
+    print('Você ganhou!')
+else:
+    print('Você Perdeu!') 
+
+
+
+
+    
